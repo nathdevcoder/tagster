@@ -1,0 +1,10 @@
+@use '../styles/utilities/mixins' as mx;
+
+.Front {
+    min-height: 800px;
+    padding: 60px 0;
+    &Container {
+        @include mx.Container(1200px);
+        @include mx.Row;
+    }
+}

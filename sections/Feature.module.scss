@@ -1,0 +1,23 @@
+
+
+.Feat { 
+    width: 100vw; 
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    &Con {
+        background-color: #F6F6F6;
+    }
+    &One { 
+        @extend .Feat;
+        background-image: url('../public/body1.png');
+        aspect-ratio: 1440/ 1160;
+    }
+    &Two {
+        @extend .Feat;
+        background-image: url('../public/body2.png'); 
+        height: 800px;
+        max-width: 1200px;
+        margin: 60px auto;
+    }
+}
