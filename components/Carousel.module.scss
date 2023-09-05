@@ -1,5 +1,13 @@
+@use '../styles/utilities/breakpoints' as br;
+
 .Carousel {
     height: 700px ;
     width: 580px; 
     margin: 40px auto ;
+    @include br.breakpoint(600px) {
+        width: 125%; 
+    }
+    @include br.breakpoint(430px) { 
+        height: 500px;
+    }
 }

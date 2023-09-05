@@ -37,11 +37,15 @@ let cards = [
 export default function How() {
   return (
     <section className={style.How}>
+      <h3>HOW</h3>
+      <div className='Divider'></div>
+      <h5 className='Colored'>!Scan and !Connect</h5>
+      <p>With so much negativity brought around social media these days, Tagster's goal is to shine a light and bring back the positivity of basic human interaction. Users of this application have the ability to give or receive random acts | words of kindness to people around the world and socialize like NEVER before.<br></br><span> Join today and find out how great social media should be!</span></p>
     <Carroussel
-        cards={cards} 
-        offset={2}
-        showArrows={false}
-      />
+      cards={cards} 
+      offset={2}
+      showArrows={false}
+    />
     </section>
   )
 }

@@ -1,4 +1,4 @@
-
+@use '../styles/utilities/breakpoints' as br;
 
 .Feat { 
     width: 100vw; 
@@ -12,6 +12,60 @@
         @extend .Feat;
         background-image: url('../public/body1.png');
         aspect-ratio: 1440/ 1160;
+        position: relative;
+        z-index: -1;
+        @include br.breakpoint(700px) { 
+            height: 1000px;
+            background-position: bottom right;
+            background-size: 140%;
+        }
+        @include br.breakpoint(550px) {  
+            background-size: 180%;
+        }
+        &Content {
+            position: absolute;
+            top: 15%;
+            left: 10%;
+            width: 40%;
+            @include br.breakpoint(1000px) {
+                top: 5%;
+            }
+            @include br.breakpoint(700px) { 
+                width: 100%; 
+                left: 0;
+                padding: 0 15px;
+            }
+            & > div {
+                margin: unset ;
+            }
+            & h3 {
+                font-family: Mulish;
+                font-size: 48px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                letter-spacing: 0.96px;
+                margin: 20px 0;
+                @include br.breakpoint(1000px) {
+                    font-size: 36px;
+                    line-height: 46px;
+                    margin: 10px 0; 
+                }
+            }
+            & p {
+                color: var(--Gray-1, #333);
+                font-family: Mulish;
+                font-size: 22px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                letter-spacing: 0.44px;
+                @include br.breakpoint(1000px) {
+                    font-size: 18px;
+                    line-height: 23px;
+                }
+            }
+        }
     }
     &Two {
         @extend .Feat;
@@ -19,5 +73,58 @@
         height: 800px;
         max-width: 1200px;
         margin: 60px auto;
+        position: relative;
+        z-index: -1;
+        @include br.breakpoint(700px) {  
+            background-position: bottom; 
+            height: 700px; 
+        } 
+        @include br.breakpoint(500px) {  
+            height: 600px;  
+        } 
+        &Content {
+            position: absolute;
+            top: 0;
+            right: 10%;
+            width: 40%;
+            @include br.breakpoint(1000px) {
+                top: 5%;
+            }
+            @include br.breakpoint(700px) { 
+                width: 100%; 
+                left: 0;
+                padding: 0 15px;
+            }
+            & > div {
+                margin: unset ;
+            }
+            & h3 {
+                font-family: Mulish;
+                font-size: 48px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                letter-spacing: 0.96px;
+                margin: 20px 0;
+                @include br.breakpoint(1000px) {
+                    font-size: 36px;
+                    line-height: 46px;
+                    margin: 10px 0; 
+                }
+            }
+            & p {
+                color: var(--Gray-1, #333);
+                font-family: Mulish;
+                font-size: 22px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                letter-spacing: 0.44px;
+                @include br.breakpoint(1000px) {
+                    font-size: 18px;
+                    line-height: 23px;
+                }
+            }
+        }
     }
 }

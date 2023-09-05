@@ -28,7 +28,9 @@
     }
     &Hand{
         position: absolute;
-        left: 14%;  
+        left: 14%;   
+        width: 450px; 
+        height: 685px;
         @include br.breakpoint(1400px) {
             left: 10%; 
             width: 400px; 
@@ -83,7 +85,7 @@
         }
     }
     &Btns {
-        @include mx.Row('start');
+        @include mx.Row('flex-start');
         column-gap: 20px;
         margin-top: 20px;
         & button {

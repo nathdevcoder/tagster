@@ -1,0 +1,65 @@
+@use '../styles/utilities/breakpoints' as br;
+@use '../styles/utilities/mixins' as mx;
+
+.List {
+    @include mx.Row( flex-start, flex-start);
+    column-gap: 16px;
+    &Rev {
+        @extend .List;
+        flex-direction: row-reverse;
+        text-align: right;
+        @include br.breakpoint(1000px) {
+            flex-direction: row;
+            text-align: left;
+        }
+        & h6 {
+            width: max-content;
+            margin-left: auto;
+            text-align: right;
+            font-variant-numeric: lining-nums proportional-nums;
+            font-family: Mulish;
+            font-size: 27px;
+            font-style: normal;
+            font-weight: 800;
+            line-height: 37px; 
+            letter-spacing: 0.449px; 
+            @include br.breakpoint(1000px) {
+                margin-left: unset; 
+            }
+        }
+        & p {
+            color: #8F8F8F;
+            font-variant-numeric: lining-nums proportional-nums;
+            font-family: Mulish;
+            font-size: 18px !important;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22.874px; 
+            letter-spacing: 0.449px; 
+        }
+    }  
+    &Row {
+        @extend .List; 
+        & h6 {
+            width: max-content; 
+            text-align: right;
+            font-variant-numeric: lining-nums proportional-nums;
+            font-family: Mulish;
+            font-size: 27px;
+            font-style: normal;
+            font-weight: 800;
+            line-height: 37px; 
+            letter-spacing: 0.449px; 
+        }
+        & p {
+            color: #8F8F8F;
+            font-variant-numeric: lining-nums proportional-nums;
+            font-family: Mulish; 
+            font-style: normal;
+            font-size: 18px !important;
+            font-weight: 400;
+            line-height: 22.874px; 
+            letter-spacing: 0.449px;
+        }
+    }
+}

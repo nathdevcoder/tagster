@@ -1,2 +1,9 @@
+@use '../../styles/utilities/breakpoints' as br;
  
-  
+  .card {
+    &img {
+        @include br.breakpoint(600px) {
+            width: 100%; 
+        }
+    }
+  }
