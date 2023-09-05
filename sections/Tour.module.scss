@@ -1,0 +1,94 @@
+@use '../styles/utilities/breakpoints' as br;
+.Tour {
+    background: #F6F6F6;
+    position: relative;
+    width: 100%;
+    height: 1000px;
+    z-index: -1;
+    &Content {
+        width: 500px;
+        position: absolute;
+        right: 18%;
+        top: 15%;
+        @include br.breakpoint(1300px) {
+            right: 10%;
+        }
+        @include br.breakpoint(1000px) {
+            right: unset;
+            top: 10%;
+            padding: 0 20px;
+            width: 100%; 
+        }
+        & h3 {
+            color: #FF7D00;
+            text-align: center;
+            font-family: Mulish;
+            font-size: 50px;
+            font-style: normal;
+            font-weight: 800;
+            line-height: 71px; /* 142% */
+            letter-spacing: 1.573px;
+            padding-bottom: 10px;
+            transform: translateX(40px);
+            @include br.breakpoint(700px) {
+                transform: unset;
+                font-size: 38px; 
+            } 
+            @include br.breakpoint(400px) {
+                transform: unset;
+                font-size: 32px; 
+            }
+        }
+        & h2 {
+            color: #59A801;
+            font-family: Raleway;
+            font-size: 75px;
+            font-style: normal;
+            font-weight: 100;
+            line-height: 71px; /* 94.667% */
+            letter-spacing: 1.573px;
+            @include br.breakpoint(400px) { 
+                font-size: 50px; 
+            }
+        }
+        & p {
+            color: var(--Gray-1, #333);
+            text-align: right;
+            font-family: Mulish;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 29.768px; /* 135.307% */
+        }
+    }
+    &Leaf {
+        position: absolute;
+        right: -120px; 
+        @include br.breakpoint(700px) {
+            z-index: -1;
+        }
+    }
+    &Img {
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        @include br.breakpoint(1600px) {
+            left: 5%;
+            width: 700px;
+            object-fit: contain;
+        }
+        @include br.breakpoint(1300px) {
+            top: 15%;
+            width: 600px; 
+        }
+        @include br.breakpoint(1000px) {
+            top: unset;
+            bottom: -15%;
+        }
+        @include br.breakpoint(700px) { 
+            bottom: -20%; 
+            width: 100%;
+        }
+    }
+    
+}

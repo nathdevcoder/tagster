@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 import style from './Hero.module.scss'
 import Image from 'next/image'
 import bg from '@src/public/hero.png'
@@ -8,18 +8,29 @@ import hand from '@src/public/herohand.png'
 import logo from '@src/public/herologo.png'
 import playstre from '@src/public/playbtn.png'
 import apple from '@src/public/applebtn.png'
-import { useSpring, animated } from '@react-spring/web'
-
+import {  animated, useInView } from '@react-spring/web' 
 export default function Hero() {
-    const springs = useSpring({
-        from: { x: -hand.width, y:hand.height },
-        to: { x: 0, y: 0},
-      })
+    const [ref, springs] = useInView( () => ({
+      from: {
+        opacity: 0,
+        y: 200,
+        x: -200
+      },
+      to: {
+        opacity: 1,
+        y: 0,
+        x: 0
+      },
+    }),
+    {
+      rootMargin: '-40% 0%',
+    }) 
   return (
     <header className={style.Hero}>
         <Image src={bg} alt='bg' height={bg.height} width={bg.width} className={style.HeroBackground} />
         <Image src={front} alt='front' height={front.height} width={front.width} className={style.HeroFront} />
         <animated.div 
+        ref={ref} 
         className={style.HeroHand}
         style={{ ...springs }} >
             <Image src={hand} alt='hand' height={hand.height} width={hand.width}  /> 

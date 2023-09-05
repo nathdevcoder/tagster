@@ -1,0 +1,79 @@
+@use '../styles/utilities/breakpoints' as br;
+@use '../styles/utilities/mixins' as mx;
+
+.Foot {
+    height: 1000px;
+    position: relative;
+    background-image: url('../public/foot.png');
+    background-repeat: no-repeat;
+    background-position: center; 
+    @include br.breakpoint(1200px) {
+        background-size: 100%;
+    }
+    @include br.breakpoint(800px) {
+        height: 800px; 
+    }
+    @include br.breakpoint(600px) { 
+        background-size: 160%;
+        background-position: 0% 20%;  
+    }
+    & p {
+        padding: 10px 0;
+        color: var(--Gray-3, #828282);
+        font-family: Mulish;
+        font-size: 25px;
+        font-style: italic;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.5px;
+    }
+    &Text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-110%);
+        @include br.breakpoint(1200px) {
+            transform: unset;
+            left: 5%;
+        }
+        @include br.breakpoint(600px) { 
+            top: 50%;
+            left: 50%; 
+            transform: translateX(-50% );
+             
+        }
+    }
+    &Btns {
+        @include mx.Row('flex-start');
+        column-gap: 20px;
+        margin-top: 20px;
+        & button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            & img {
+                @include br.breakpoint(850px) {
+                    width: 150px;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+    &Shoe {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        & p {
+            color: #FF7D00;
+            text-align: right;
+            font-family: Mulish;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 26.579px; /* 177.193% */
+            text-align: center;
+        }
+    }
+}
